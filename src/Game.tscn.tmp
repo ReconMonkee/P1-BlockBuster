@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/element_red_rectangle_glossy.png" type="Texture" id=1]
 [ext_resource path="res://Assets/element_grey_rectangle_glossy.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/element_yellow_rectangle_glossy.png" type="Texture" id=6]
 [ext_resource path="res://src/Block.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Ball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Arrow.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
@@ -188,10 +189,10 @@ __meta__ = {
 }
 
 [node name="Launch" type="Button" parent="."]
-margin_left = 132.433
-margin_top = 68.3354
-margin_right = 198.433
-margin_bottom = 88.3354
+margin_left = 83.6976
+margin_top = 70.4543
+margin_right = 149.698
+margin_bottom = 90.4543
 text = "LAUNCH"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -287,15 +288,8 @@ position = Vector2( 709, 209 )
 ] instance=ExtResource( 7 )]
 position = Vector2( 817, 265 )
 
-[node name="Set" type="Button" parent="."]
-margin_left = 42.865
-margin_top = 68.8409
-margin_right = 108.865
-margin_bottom = 88.8409
-text = "SET"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Arrow" parent="." instance=ExtResource( 9 )]
+position = Vector2( 537, 501 )
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_Ball_body_entered"]
 [connection signal="text_changed" from="X-Value" to="Ball" method="_on_XValue_text_changed"]
 [connection signal="text_entered" from="X-Value" to="Ball" method="_on_XValue_text_entered"]
@@ -303,4 +297,3 @@ __meta__ = {
 [connection signal="text_entered" from="Y-Value" to="Ball" method="_on_YValue_text_entered"]
 [connection signal="pressed" from="Launch" to="Ball" method="_on_Launch_pressed"]
 [connection signal="text_changed" from="Strength" to="Ball" method="_on_Strength_text_changed"]
-[connection signal="pressed" from="Set" to="Ball" method="_on_Set_pressed"]
