@@ -23,6 +23,11 @@ func _on_Launch_pressed():
 
 func _on_XValue_text_changed(new_text):
 	xValue = float(new_text)/180
+	if xValue > 1:
+		xValue = 1
+	if xValue < -1:
+		xValue = -1
+		
 
 
 func _on_Strength_text_changed(new_text):
@@ -32,6 +37,7 @@ func _on_Strength_text_changed(new_text):
 func _on_Ball_body_entered(body):
 	if body.is_in_group("blocks"):
 		body.queue_free()
+		print("Block Busted!!")
 	if body.is_in_group("Floor"):
 		linear_velocity = Vector2 (0,0)
 		angular_velocity = 0
