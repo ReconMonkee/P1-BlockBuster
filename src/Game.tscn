@@ -74,7 +74,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
 2/texture = ExtResource( 2 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 64, 32 )
+2/region = Rect2( -1, -1, 66, 34 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -285,8 +285,8 @@ margin_top = 8.0
 margin_right = 1005.0
 margin_bottom = 86.0
 text = "Break The Blocks!
-X-Value    1 = Right. -1 = Left
-Y-Value   -1 = Up. 1 = Down
+Angle    180 = Right. -180 = Left
+Recommended strength: 500
 "
 align = 1
 valign = 1
